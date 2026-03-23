@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+
 
 data = {
     'hours': [1, 2, 3, 4, 5, 6, 7, 8],
@@ -23,11 +23,5 @@ X_train, X_test, y_train, y_test = train_test_split(
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-y_pred = model.predict(X_test)
-
-mse = mean_squared_error(y_test, y_pred)
-
-print("X_test:\n", X_test)
-print("\nActual values:", y_test.values)
-print("\nPredicted values:", y_pred)
-print("\nMean Squared Error:", mse)
+predictions = model.predict(X_test)
+print("predictions",predictions)
